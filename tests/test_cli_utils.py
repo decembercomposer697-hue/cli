@@ -57,7 +57,6 @@ def test_lazy_choices_help():
 
     # Python 3.14+ calls getter during argparse initialisation
     if sys.version_info >= (3, 14):
-        from unittest.mock import ANY
         getter.assert_called()
         getter.reset_mock()
 
