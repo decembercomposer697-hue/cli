@@ -1,5 +1,7 @@
 name: Mark stale pull requests
 
+env:
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 on: workflow_dispatch
 
 permissions:
