@@ -1,8 +1,6 @@
 name: Test Snap Package (Linux)
 
 
-env:
-  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 on:
   pull_request:
     paths:
@@ -14,9 +12,9 @@ jobs:
   snap:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - name: Build
-        uses: snapcore/action-build@v1
+        uses: snapcore/action-build@v2
         id: snapcraft
       - name: Install
         run: sudo snap install --dangerous ${{ steps.snapcraft.outputs.snap }}

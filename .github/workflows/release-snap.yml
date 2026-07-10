@@ -1,7 +1,5 @@
 name: Release on Snap
 
-env:
-  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 on:
   workflow_dispatch:
     inputs:
@@ -28,11 +26,11 @@ jobs:
     concurrency: ${{ github.event.inputs.branch }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
         with:
           ref: ${{ github.event.inputs.branch }}
 
-      - uses: snapcore/action-build@v1
+      - uses: snapcore/action-build@v2
         id: build
 
       - uses: snapcore/action-publish@v1
