@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Build
-        uses: snapcore/action-build@v2
+        uses: snapcore/action-build@v1
         id: snapcraft
       - name: Install
         run: sudo snap install --dangerous ${{ steps.snapcraft.outputs.snap }}

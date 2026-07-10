@@ -30,7 +30,7 @@ jobs:
         with:
           ref: ${{ github.event.inputs.branch }}
 
-      - uses: snapcore/action-build@v2
+      - uses: snapcore/action-build@v1
         id: build
 
       - uses: snapcore/action-publish@v1
